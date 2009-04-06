@@ -1,17 +1,16 @@
 =TranslateRoutes
-
 This Rails plugin provides a simple way to translate your URLs to any number of languages.
+All routes automatically add a <tt>:lang</tt> parameter to the request so your controllers can setup an internationalized user experience.
 
-It's designed to be extremely and easy to use and customize. 
+The plugin has been designed to be easy to use and customize. 
 As it works after routing processing, it plays nice with all kind of routing definitions, including RESTful and named routes.
 It also takes care of your current routing helpers by translating them transparently.
 
 ==Installation
+This version works only with Rails 2.1.x. You can find all available versions in the wiki: [http://wiki.github.com/raul/translate_routes]
 Just check it out on your app's <tt>/vendor/plugins</tt> and see the examples below.
 
 ==Usage
-
-
 Let's start with a tiny example. Of course you need to define your routes first, e.g:
 
 	ActionController::Routing::Routes.draw do |map| 
@@ -85,7 +84,13 @@ We can see that resource controllers and actions are translated as well:
 	new_person_es GET   /es/gente/crear               {:lang=>"es", :controller=>"people", :action=>"new"}
 	new_person GET    	/people/new                   {:lang=>"en", :controller=>"people", :action=>"new"}
 
-Finally, we can get rid of that verbose translation hashes by using yaml files. Create a file inside your <tt>/config</tt> directory, called <tt>routes_es.yml</tt> and fill it with your desired translations, e.g:
+We can get rid of that verbose translation hashes by using yaml files, which can be generated/updated with the <tt>translate_routes:update_yaml</tt> rake task.
+Let's create a spanish and french translation files with <tt>translate_routes:update_yaml["es fr"]</tt>
+
+If it's the first time that we run the task, the files will contain a yaml skeleton with the strings to translate. 
+If we already have translated some strings they will remain on the file after executing the task, so you can run it after any <tt>routes.rb</tt> edition.
+
+We can now translate the strings for any language
 
 	# /config/routes_es.yml
 	person: persona
@@ -100,6 +105,8 @@ stuff on <tt>routes.rb</tt> with this simple line:
 
 	ActionController::Routing::Translator.translate_from_files
 
+== Integration
+You can find a sample Rails application on the translate_routes repository, designed to show how easy is to setup 
 
 == Configuration
 You can customize some features by adding some lines before your translation code:
@@ -129,7 +136,6 @@ or adding the equivalent <tt>/config/routes_es.yml</tt> and an empty <tt>/config
 	ActionController::Routing::Translator.prefix_on_default_lang = true
 
 <b>WARNING!</b> this way you'll disable your root -empty- route: if english is your default language, your empty route will be translated to <tt>/en</tt> so you must manually take care of it.
-
 
 == Suggestions, bug reports, questions
 Feedback and comments will be always welcome at raul@murciano.net

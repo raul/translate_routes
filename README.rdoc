@@ -7,6 +7,7 @@ As it works after routing processing, it plays nice with all kind of routing def
 It also takes care of your current routing helpers by translating them transparently.
 
 ==Installation
+This version works only with Rails 2.1.x. You can find all available versions in the wiki: [http://wiki.github.com/raul/translate_routes]
 Just check it out on your app's <tt>/vendor/plugins</tt> and see the examples below.
 
 ==Usage
