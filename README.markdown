@@ -1,7 +1,17 @@
 TranslateRoutes
 ===============
 
-This branch works with Rails 3.x, you can find branches for Rails [2.1.x](http://github.com/raul/translate_routes/tree/rails2.1), [2.2.x](http://github.com/raul/translate_routes/tree/rails2.2) and [2.3.x](http://github.com/raul/translate_routes/tree/rails2.3)
+Rails 3
+-------
+
+The master branch supported some versions of Rails 3, though I've discontinued the development.
+[This fork](https://github.com/francesc/translate_routes) or the [i18n_routing gem](https://github.com/kwi/i18n_routing) can be
+good alternatives.
+
+Rails 2
+-------
+
+You can find branches for Rails [2.1.x](http://github.com/raul/translate_routes/tree/rails2.1), [2.2.x](http://github.com/raul/translate_routes/tree/rails2.2) and [2.3.x](http://github.com/raul/translate_routes/tree/rails2.3)
 
 This Rails plugin provides a simple way to translate your URLs to any number of languages, even on a fully working application.
 
@@ -12,9 +22,9 @@ It works fine with all kind of routing definitions, including RESTful and named 
 Installation
 ------------
 Add translate_routes to your `Gemfile`:
-  
+
     gem 'translate_routes'
-    
+
 And let bundle do the rest:
 
     bundle install
