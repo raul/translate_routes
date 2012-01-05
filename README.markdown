@@ -1,12 +1,11 @@
 TranslateRoutes
 ===============
 
-Rails 3
--------
+Rails >= 3
+----------
 
-The master branch supported some versions of Rails 3, though I've discontinued the development.
-[This fork](https://github.com/francesc/translate_routes) or the [i18n_routing gem](https://github.com/kwi/i18n_routing) can be
-good alternatives.
+The master branch supported some versions of Rails 3, though **I've discontinued the development**.
+Francesc Pla has forked this project in his [rails-translate-routes](https://github.com/francesc/rails-translate-routes) gem, check it out.
 
 Rails 2
 -------
