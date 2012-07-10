@@ -5,7 +5,13 @@ Rails >= 3
 ----------
 
 The master branch supported some versions of Rails 3, though **I've discontinued the development**.
-Francesc Pla has forked this project in his [rails-translate-routes](https://github.com/francesc/rails-translate-routes) gem, check it out.
+
+Two forks have been published as different gems and are the best alternatives I'm aware of: 
+ 
+- Francesc Pla's [rails-translate-routes](https://github.com/francesc/rails-translate-routes)
+- Enric Lluelles' [route_translator](https://github.com/enriclluelles/route_translator)
+
+Free Software is wonderful, isn't it? :)
 
 Rails 2
 -------
